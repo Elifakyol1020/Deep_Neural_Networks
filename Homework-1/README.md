@@ -13,7 +13,7 @@ Bu projede CIFAR-10 veri seti üzerinde k-NN (k-Nearest Neighbors) algoritması 
 ## Klasör Yapısı
 
 ├── data/
-│   └── cifar-10-batches-py/
+│   └── cifar-10/cifar-10/
 ├── main.py
 ├── requirements.txt
 └── README.md
