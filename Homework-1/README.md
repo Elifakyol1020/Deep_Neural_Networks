@@ -4,16 +4,16 @@ Bu projede CIFAR-10 veri seti üzerinde k-NN (k-Nearest Neighbors) algoritması 
 
 ## Özellikler
 - Veri seti yerel klasörden okunur.
-- Kullanıcı L1 (Manhattan) veya L2 (Öklid) uzaklık metriğini seçer.
-- Kullanıcı k değeri girer.
-- Kullanıcı bir test örneği seçer.
-- Seçilen örnek sınıflandırılır.
-- Sonuç ve en yakın komşular ekranda gösterilir.
+- Web arayüzünde kullanıcı L1 (Manhattan) veya L2 (Öklid) uzaklık metriğini seçer.
+- Kullanıcı `k` ve sınıf başına kullanılacak örnek sayısını girer.
+- Kullanıcı test görsel yolunu girer.
+- Tahmin edilen sınıf, gerçek sınıf ve test görseli birlikte gösterilir.
 
 ## Klasör Yapısı
 
 ├── data/
-│   └── cifar-10/cifar-10/
+│   └── cifar10/cifar10/
+├── app.py
 ├── main.py
 ├── requirements.txt
 └── README.md
@@ -25,5 +25,11 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 ## Çalıştırma
+
+Web arayüzü:
+
+streamlit run app.py
+
+Komut satırı sürümü:
 
 python main.py

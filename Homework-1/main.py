@@ -4,6 +4,7 @@ import numpy as np
 
 
 def prepare_training_set(train_folder, max_images_per_class=1000):
+    # Egitim klasorundeki resimleri okuyup vektore cevirir.
     image_vectors = []
     image_labels = []
     label_names = []
@@ -51,6 +52,7 @@ def prepare_training_set(train_folder, max_images_per_class=1000):
 
 
 def calculate_l1(vector1, vector2):
+    # L1 (Manhattan) uzakligi.
     total_distance = 0.0
 
     for i in range(len(vector1)):
@@ -60,6 +62,7 @@ def calculate_l1(vector1, vector2):
 
 
 def calculate_l2(vector1, vector2):
+    # L2 (Euclidean) uzakligi.
     total_distance = 0.0
 
     for i in range(len(vector1)):
@@ -70,6 +73,7 @@ def calculate_l2(vector1, vector2):
 
 
 def predict_class(train_data, train_labels, sample_image, k_value, distance_choice):
+    # Tum orneklerle uzaklik hesaplanir, en yakin k komsu ile oy kullanilir.
     distance_list = []
 
     for i in range(len(train_data)):
@@ -98,6 +102,7 @@ def predict_class(train_data, train_labels, sample_image, k_value, distance_choi
 
 print("=== CIFAR-10 k-NN Sınıflandırma Uygulaması ===")
 
+# Egitim verisinin bulundugu klasor.
 train_path = "data/cifar10/cifar10/train"
 
 if not os.path.exists(train_path):
@@ -148,6 +153,7 @@ if test_image is None:
     raise SystemExit
 
 test_image = cv2.resize(test_image, (32, 32))
+# Test resmi de egitim verisi gibi normalize edilir.
 test_image = test_image.flatten().astype(np.float32) / 255.0
 
 predicted_index = predict_class(
